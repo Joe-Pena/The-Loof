@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "crispy_forms",
     "the_loof.apps.public",
     "the_loof.apps.accounts",
 ]
@@ -140,3 +141,6 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 LOGIN_REDIRECT_URL = "public:index"
 LOGIN_URL = "accounts:login"
 LOGOUT_REDIRECT_URL = "public:index"
+
+# For Crispy Forms
+CRISPY_TEMPLATE_PACK = "bootstrap4"

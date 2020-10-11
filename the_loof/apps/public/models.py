@@ -1,5 +1,4 @@
-from django.db import models
-from django.db.models.fields import CharField
+from django.db import models, transaction
 
 # Create your models here.
 class Article(models.Model):
@@ -28,11 +27,41 @@ class Article(models.Model):
     publish_at = models.DateTimeField(auto_now=True)
     static_page = models.BooleanField(default=False)
     author_override = models.BooleanField(null=True)
-    uuid = CharField(max_length=200, default="")
+    uuid = models.CharField(max_length=200, default="")
     product_id = models.IntegerField(default=0)
+    article_of_the_day = models.BooleanField(default=False)
 
     class Meta:
         ordering = ["-created"]
 
     def __str__(self):
         return self.headline
+
+    # Override save method in order to make
+    # `article_of_the_day` property a unique
+    # boolean (Only one article can be True)
+    def save(self, *args, **kwargs):
+        if not self.article_of_the_day:
+            return super(Article, self).save(*args, **kwargs)
+        with transaction.atomic():
+            Article.objects.filter(article_of_the_day=True).update(
+                article_of_the_day=False
+            )
+            return super(Article, self).save(*args, **kwargs)
+
+
+class Comment(models.Model):
+    article = models.ForeignKey(
+        Article, on_delete=models.CASCADE, related_name="comments"
+    )
+    username = models.CharField(max_length=80, default="Anonymous User")
+    body = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
+    # Active field in the case of spam coming in.
+    active = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ["-created"]
+
+    def __str__(self):
+        return f"Comment {self.body} by {self.username}"

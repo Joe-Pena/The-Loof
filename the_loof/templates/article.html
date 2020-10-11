@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
-{% block title %}{{ object.headline }}{% endblock %}
+{% block title %}{{ article.headline }}{% endblock %}
 
 {% block content %}
 <div class="container article-content-inner">
@@ -9,8 +10,8 @@
           <div class="article-header">
               <header>
                   <div id="adv_text" class="adv-heading"></div>
-                  <h1>{{ object.headline }}</h1>
-                  <h5>{{ object.promo }}</h5>
+                  <h1>{{ article.headline }}</h1>
+                  <h5>{{ article.promo }}</h5>
               </header>
           </div>
       </div>
@@ -20,24 +21,24 @@
           <div class="author-tagline author-inline">
               <div class="author-and-date">
                   <div class="author-byline">
-                      <div class="author-name">{{ object.byline }}</div>
+                      <div class="author-name">{{ article.byline }}</div>
                       <div class="author-username">
                           <!--(<a href="#">TMFDanielSparks</a>)-->
                       </div>
                   </div>
                   <div class="article-pub-date">
                       <div class="publication-date">
-                          {{ object.created }}
+                          {{ article.created }}
                       </div>
                   </div>
               </div>
           </div>
           <section class="article-body">
               <div class="article-content">
-                  {{ object.body | safe }}
+                  {{ article.body | safe }}
               </div>
               <div class="article-disclosure">
-                  {{ object.disclosure | safe }}
+                  {{ article.disclosure | safe }}
               </div>
           </section>
       </main>
@@ -144,6 +145,32 @@
               </ul>
           </section>
       </aside>
+  </div>
+  {% for comment in comments %}
+    <div class="comments">
+        <p class="font-weight-bold">
+            {{ comment.username }}
+            <span class="text-muted font-weight-normal">
+                {{ comment.created }}
+            </span>
+        </p>
+        {{ comment.body | linebreaks }}
+    </div>
+  {% endfor %}
+
+  <div class="card-body">
+      {% if new_comment %}
+        <div class="alert alert-success" role="alert">
+            Your comment has been submitted!
+        </div>
+      {% else %}
+        <h3>Leave us a comment!</h3>
+        <form method="post">
+            {{ comment_form | crispy}}
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+        </form>
+      {% endif %}
   </div>
 </div>
 {% endblock %}
