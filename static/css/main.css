@@ -1,3 +1,7 @@
+:root {
+  --primary: #804199;
+}
+
 #main{
   padding-top: 74px;
   padding-bottom: 6rem;
@@ -11,6 +15,10 @@
 .navbar-brand img {
   height: 40px;
   padding: 0 1rem;
+}
+
+#mainNav .navbar-nav li.nav-item a.nav-link {
+  color: #161616;
 }
 
 @media (min-width: 992px) {
