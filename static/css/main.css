@@ -21,6 +21,15 @@
   color: #161616;
 }
 
+.card-title-link {
+  color: #161616;
+}
+
+.card-title-link:hover {
+  color: #161616;
+  text-decoration: none;
+}
+
 @media (min-width: 992px) {
   #main{
     padding-top: 104px;
