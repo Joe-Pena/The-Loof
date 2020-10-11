@@ -286,6 +286,97 @@
     }
   },
   {
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+      "action_time": "2020-10-11T19:13:02.648Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "11",
+      "object_repr": "cool article here",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Images\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+      "action_time": "2020-10-11T19:21:00.969Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "11",
+      "object_repr": "Famous actor, Johnny Depp, has admitted to not using his backup camera when getting out of a parking spot.",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Headline\", \"Slug\", \"Promo\", \"Disclosure\", \"Body\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+      "action_time": "2020-10-11T19:48:28.864Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "4",
+      "object_repr": "Here's Why Barrrick Gold Plunged 10% in October",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Article of the day\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+      "action_time": "2020-10-11T19:48:39.773Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "4",
+      "object_repr": "Here's Why Barrrick Gold Plunged 10% in October",
+      "action_flag": 2,
+      "change_message": "[]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 27,
+    "fields": {
+      "action_time": "2020-10-11T19:48:46.572Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "7",
+      "object_repr": "Why Skyworks Solutions Stock Jumped 11.7% in October",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Article of the day\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 28,
+    "fields": {
+      "action_time": "2020-10-11T19:48:55.138Z",
+      "user": 1,
+      "content_type": 7,
+      "object_id": "4",
+      "object_repr": "Here's Why Barrrick Gold Plunged 10% in October",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Article of the day\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 29,
+    "fields": {
+      "action_time": "2020-10-11T20:45:54.629Z",
+      "user": 1,
+      "content_type": 8,
+      "object_id": "1",
+      "object_repr": "Comment This is a random comment by Anonymous User",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Active\"]}}]"
+    }
+  },
+  {
     "model": "auth.permission",
     "pk": 1,
     "fields": {
@@ -538,6 +629,42 @@
     }
   },
   {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+      "name": "Can add comment",
+      "content_type": 8,
+      "codename": "add_comment"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+      "name": "Can change comment",
+      "content_type": 8,
+      "codename": "change_comment"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+      "name": "Can delete comment",
+      "content_type": 8,
+      "codename": "delete_comment"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+      "name": "Can view comment",
+      "content_type": 8,
+      "codename": "view_comment"
+    }
+  },
+  {
     "model": "auth.user",
     "pk": 1,
     "fields": {
@@ -589,6 +716,11 @@
     "model": "contenttypes.contenttype",
     "pk": 7,
     "fields": { "app_label": "public", "model": "article" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": { "app_label": "public", "model": "comment" }
   },
   {
     "model": "sessions.session",
@@ -746,7 +878,8 @@
       "static_page": false,
       "author_override": null,
       "uuid": "f52c15f2-c5a9-11e7-8889-0050569d4be0",
-      "product_id": 0
+      "product_id": 0,
+      "article_of_the_day": false
     }
   },
   {
@@ -889,7 +1022,8 @@
       "static_page": false,
       "author_override": null,
       "uuid": "a47ffbac-c5b6-11e7-be80-0050569d32b9",
-      "product_id": 0
+      "product_id": 0,
+      "article_of_the_day": false
     }
   },
   {
@@ -1050,7 +1184,8 @@
       "static_page": false,
       "author_override": null,
       "uuid": "9059ec08-c5f4-11e7-bec4-0050569d32b9",
-      "product_id": 0
+      "product_id": 0,
+      "article_of_the_day": false
     }
   },
   {
@@ -1087,7 +1222,7 @@
       "disclosure": "<p><em><a href=\"http://my.fool.com/profile/TMFProudMonkey/info.aspx\">Scott Levine</a> has no position in any of the stocks mentioned. The Motley Fool has no position in any of the stocks mentioned. The Motley Fool has a <a href=\"http://www.fool.com/Legal/fool-disclosure-policy.aspx\">disclosure policy</a>.</em></p>",
       "body": "<h2>What happened </h2>\r\n<p>Failing to recover from an 11% drop in <a href=\"https://www.fool.com/investing/2017/10/10/heres-why-barrick-gold-plunged-11-in-september.aspx\">September</a>, shares of <strong>Barrick Gold</strong> <span class=\"ticker\" data-id=\"206868\">(NYSE: ABX)</span> fell 10% last month according to <a href=\"http://marketintelligence.spglobal.com/\" target=\"_blank\">S&amp;P Global Market Intelligence</a>. Although there were other factors that surely affected the company's stock, it was news regarding Barrick's operations in Africa that stoked investors' fears the most.</p>\r\n<h2>So what</h2>\r\n<p>When considering the performance of a gold-mining stock, it's always worthwhile to take a step back and consider the price of gold to which gold stocks are closely correlated. The <strong>SPDR Gold Trust ETF </strong><span class=\"ticker\" data-id=\"208812\">(NYSEMKT: GLD)</span>, for example, fell more than 1% through the month. But Barrick's precipitous decline isn't solely attributable to the dip in the yellow stuff.</p>\r\n<div class=\"image\"><img alt=\"A gold bar lies on a financial chart next to a pair of glasses and a calculator.\" src=\"https://g.foolcdn.com/editorial/images/463206/gold_bar_2_large.jpg\"/>\r\n<p class=\"caption\">Image source: Getty Images.</p>\r\n</div>\r\n<p>Of greater concern to investors was <a href=\"https://www.fool.com/investing/2017/10/27/3-takeaways-from-barrick-golds-q3-earnings.aspx\">news pertaining to Acacia Mining</a>, in which Barrick retains 64% ownership. Operating in Tanzania, Acacia Mining has been struggling since the Tanzanian government imposed a gold and copper concentrate export ban in March. Last month, Acacia's management reported that the mineral ban had adversely affected production approximately 35%; moreover, the company revealed that it had a buildup of approximately $265 million of concentrate inventory.</p>\r\n<p>Barrick, last month, announced that it had taken a significant step toward resolving the dispute with the Tanzania government. Splitting equally the \"economic benefits\" of Acacia's future operations with the government of Tanzania, Barrick reported that Acacia will grant a 16% interest in each of its three mines to the Tanzanian government. In addition, Acacia will provide a $300 million payment to settle tax disputes. Barrick foresees finalizing the proposed agreement, which is subject to Acacia's review and approval, in the first half of 2018.</p>\r\n<p>During its third-quarter earnings report, Barrick reported that it provided a $172 million payment of the $300 million tax provision to the Tanzanian government. According to management, the tax provision and the concentrate export ban were two factors that contributed to the company's net loss of $11 million in the third quarter.</p>\r\n<h2>Now what</h2>\r\n<p>Although the proposed agreement with the Tanzanian government indicates progress toward ending the discord, unresolved issues remain. For one, it's unclear whether Barrick will have to make additional payments. In Barrick's press release, management noted that the $300 million payment was \"a gesture of good faith.\" Over the summer, though, the Tanzanian government had presented Acacia with a bill of $190 billion in fines and allegedly unpaid taxes from two of its mines, according to <a href=\"http://www.mining.com/acacia-mining-now-hit-190-billion-tax-bill-tanzania/\">mining.com</a>. Furthermore, it's unclear when the export ban will be lifted.</p>\r\n<p>Investors dislike many things, but one of their greatest fears is uncertainty. And the uncertainty of how much -- if not all -- of a $190 billion tax bill Barrick will be faced with is clearly enough to remove some luster from the stock. Moving forward, investors should certainly exercise caution and keep a sharp eye on how the narrative with the Tanzanian government unfolds. </p>",
       "created": "2017-11-10T15:05:53Z",
-      "modified": "2020-10-11T17:25:05.565Z",
+      "modified": "2020-10-11T19:48:55.135Z",
       "instruments": [
         {
           "links": {
@@ -1217,11 +1352,12 @@
       },
       "byline": "Scott Levine",
       "visibility": 100,
-      "publish_at": "2020-10-11T17:25:05.565Z",
+      "publish_at": "2020-10-11T19:48:55.135Z",
       "static_page": false,
       "author_override": null,
       "uuid": "a7acd8c8-c5ce-11e7-9fa6-0050569d4be0",
-      "product_id": 0
+      "product_id": 0,
+      "article_of_the_day": true
     }
   },
   {
@@ -1508,7 +1644,8 @@
       "static_page": false,
       "author_override": null,
       "uuid": "9fc68f92-c3fc-11e7-8464-0050569d4be0",
-      "product_id": 0
+      "product_id": 0,
+      "article_of_the_day": false
     }
   },
   {
@@ -1660,7 +1797,8 @@
       "static_page": false,
       "author_override": null,
       "uuid": "f1a541a2-c45e-11e7-9008-0050569d4be0",
-      "product_id": 0
+      "product_id": 0,
+      "article_of_the_day": false
     }
   },
   {
@@ -1697,7 +1835,7 @@
       "disclosure": "<p><em><a href=\"http://my.fool.com/profile/TMFNewsie/info.aspx\">Chris Neiger</a> has no position in any of the stocks mentioned. The Motley Fool owns shares of and recommends Apple and Skyworks Solutions. The Motley Fool has the following options: long January 2020 $150 calls on Apple, short January 2020 $155 calls on Apple, short November 2017 $92 puts on Skyworks Solutions, and short January 2018 $105 calls on Skyworks Solutions. The Motley Fool recommends Broadcom Ltd. The Motley Fool has a <a href=\"http://www.fool.com/Legal/fool-disclosure-policy.aspx\">disclosure policy</a>.</em></p>",
       "body": "<h2><strong>What happened</strong></h2>\r\n<p>Shares of <strong>Skyworks Solutions</strong> <span class=\"ticker\" data-id=\"205616\">(NASDAQ: SWKS)</span> popped by 11.7% in October, according to data provided by <a href=\"http://marketintelligence.spglobal.com/\">S&amp;P Global Market Intelligence</a>, after <strong>JPMorgan</strong> released an investor note indicating that the company's revenues will increase because it secured more design wins in <strong>Apple</strong>'s iPhones.</p>\r\n<h2><strong>So what</strong></h2>\r\n<p>JPMorgan analyst Bill Peterson wrote that Skyworks and its competitors -- <strong>Broadcom</strong> and <strong>Qorvo</strong> -- could see double-digit revenue growth over the next year as they benefit from sales of the new iPhones. Peterson said:</p>\r\n<blockquote>\r\n<p>We continue to believe the \"Big 3\" of Broadcom, Skyworks and Qorvo are well-positioned to benefit from dollar content gains in this year's iPhone models and gain further content over the next few years and drive near double-digit revenue growth over the next 12-18 months.</p>\r\n</blockquote>\r\n<div class=\"image\"><img alt=\"Image of a line graph. \" src=\"https://g.foolcdn.com/editorial/images/463230/gettyimages-497754124_large.jpg\"/>\r\n<p class=\"caption\">Image source: Getty Images.</p>\r\n</div>\r\n<p>SkyWorks' power amplifiers and radio frequency switches won four spots <a href=\"https://www.ifixit.com/Teardown/iPhone+8+Teardown/97481\"></a> in the latest iPhone 8 and iPhone 8 Plus. That's a slight improvement over last year, when the company had four spots in the iPhone 7 and three design wins in the iPhone 7 Plus.</p>\r\n<p>Investors were pleased to hear that Skyworks' tech inside the iPhones not only grew this year, but that the company could add more tech inside future iPhones over the next few years as well.</p>\r\n<h2><strong>Now what</strong></h2>\r\n<p>The good news continued into November for Skyworks investors after a recent teardown of the iPhone X by iFixit showed that the company has several power amplifiers in that device as well.</p>\r\n<p>Skyworks reported its <a href=\"https://www.fool.com/investing/2017/11/07/skyworks-solutions-inc-delivers-record-results.aspx\">fiscal fourth-quarter 2017 earnings</a> at the beginning of November, and the company saw its revenue increase 18% year over year in the quarter, and full-year revenue jumped 11%. Skyworks is forecasting a 15% increase in sales in the fiscal first quarter, which will include sales of its modules and amplifiers into the new iPhones. If that trend continues, and JPMorgan estimates prove correct, then Skyworks investors have even more to look forward to.</p>",
       "created": "2017-11-10T14:58:36Z",
-      "modified": "2020-10-11T17:26:39.716Z",
+      "modified": "2020-10-11T19:48:46.569Z",
       "instruments": [
         {
           "links": {
@@ -1887,11 +2025,12 @@
       },
       "byline": "Chris Neiger",
       "visibility": 100,
-      "publish_at": "2020-10-11T17:26:39.716Z",
+      "publish_at": "2020-10-11T19:48:46.569Z",
       "static_page": false,
       "author_override": null,
       "uuid": "5675dc56-c61a-11e7-8fd5-0050569d32b9",
-      "product_id": 0
+      "product_id": 0,
+      "article_of_the_day": false
     }
   },
   {
@@ -2047,7 +2186,8 @@
       "static_page": false,
       "author_override": null,
       "uuid": "d6397ee8-c4da-11e7-a496-0050569d4be0",
-      "product_id": 0
+      "product_id": 0,
+      "article_of_the_day": false
     }
   },
   {
@@ -2203,7 +2343,8 @@
       "static_page": false,
       "author_override": null,
       "uuid": "54199a62-c4dd-11e7-982d-0050569d32b9",
-      "product_id": 0
+      "product_id": 0,
+      "article_of_the_day": false
     }
   },
   {
@@ -2359,38 +2500,81 @@
       "static_page": false,
       "author_override": null,
       "uuid": "98122758-c09f-11e7-8978-0050569d32b9",
-      "product_id": 0
+      "product_id": 0,
+      "article_of_the_day": false
     }
   },
   {
     "model": "public.article",
     "pk": 11,
     "fields": {
-      "headline": "cool article here",
-      "slug": "cool-article-here",
+      "headline": "Famous actor, Johnny Depp, has admitted to not using his backup camera when getting out of a parking spot.",
+      "slug": "famous-actor-johnny-depp-has-admitted",
       "authors": {},
       "article_type": "article",
-      "promo": "asdfasdf",
-      "disclosure": "asdfasdfasdf",
-      "body": "asdfasdfasdf",
+      "promo": "What a total savage.",
+      "disclosure": "I do not know Johnny Depp, or anyone in Hollywood, for that matter.",
+      "body": "What is Lorem Ipsum?\r\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\n\r\nWhy do we use it?\r\nIt is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).\r\n\r\n\r\nWhere does it come from?\r\nContrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.\r\n\r\nThe standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.",
       "created": "2020-10-11T16:36:06.092Z",
-      "modified": "2020-10-11T16:36:06.092Z",
+      "modified": "2020-10-11T19:21:00.968Z",
       "instruments": {},
       "bureau": {},
       "collection": {},
       "tags": {},
       "recommendations": {},
-      "images": {},
+      "images": [
+        {
+          "url": "https://g.foolcdn.com/editorial/images/462838/7th-gen-intel-core-u-series-with-iris-plus-front.jpg",
+          "name": "7th-Gen-Intel-Core-U-series-with-Iris-Plus-front",
+          "uuid": "476a98da-c45f-11e7-b8f2-0050569d4be0",
+          "image": "https://g.foolcdn.com/editorial/images/462838/7th-gen-intel-core-u-series-with-iris-plus-front.jpg",
+          "created": "2017-11-08T08:31:55.713304Z",
+          "featured": false,
+          "modified": "2017-11-08T08:31:55.719355Z"
+        },
+        {
+          "url": "https://g.foolcdn.com/editorial/images/462838/8th-gen-intel-core-s-series-chip.jpg",
+          "name": "8th Gen Intel Core S-series Chip",
+          "uuid": "530f58ec-c45f-11e7-8a5a-0050569d4be0",
+          "image": "https://g.foolcdn.com/editorial/images/462838/8th-gen-intel-core-s-series-chip.jpg",
+          "created": "2017-11-08T08:32:15.249363Z",
+          "featured": true,
+          "modified": "2017-11-08T08:32:38.187394Z"
+        }
+      ],
       "video": null,
       "pitch": {},
       "links": {},
       "byline": "Joe Pena",
       "visibility": 100,
-      "publish_at": "2020-10-11T16:36:06.092Z",
+      "publish_at": "2020-10-11T19:21:00.968Z",
       "static_page": false,
       "author_override": null,
       "uuid": "asdfasdfasd",
-      "product_id": 0
+      "product_id": 0,
+      "article_of_the_day": false
+    }
+  },
+  {
+    "model": "public.comment",
+    "pk": 1,
+    "fields": {
+      "article": 11,
+      "username": "Anonymous User",
+      "body": "This is a random comment",
+      "created": "2020-10-11T20:45:36.323Z",
+      "active": true
+    }
+  },
+  {
+    "model": "public.comment",
+    "pk": 2,
+    "fields": {
+      "article": 11,
+      "username": "Anonymous User",
+      "body": "This is a random comment",
+      "created": "2020-10-11T20:45:58.489Z",
+      "active": false
     }
   }
 ]

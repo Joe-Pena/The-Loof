@@ -159,18 +159,12 @@
   {% endfor %}
 
   <div class="card-body">
-      {% if new_comment %}
-        <div class="alert alert-success" role="alert">
-            Your comment has been submitted!
-        </div>
-      {% else %}
         <h3>Leave us a comment!</h3>
         <form method="post">
             {{ comment_form | crispy}}
             {% csrf_token %}
             <button type="submit" class="btn btn-primary btn-lg">Submit</button>
         </form>
-      {% endif %}
   </div>
 </div>
 {% endblock %}

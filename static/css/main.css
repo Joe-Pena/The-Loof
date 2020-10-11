@@ -30,6 +30,10 @@
   text-decoration: none;
 }
 
+.article-body .image img{
+  width: 100%;
+}
+
 @media (min-width: 992px) {
   #main{
     padding-top: 104px;
