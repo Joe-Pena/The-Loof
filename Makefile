@@ -8,5 +8,5 @@ stop:
 	docker-compose down --remove-orphans $(options)
 
 manage:
-	docker-compose run -rm $(options) the_loof python manage.py $(cmd)
+	docker-compose run $(options) the_loof python manage.py $(cmd)
 

@@ -130,3 +130,9 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
+
+
+# Django Auth
+LOGIN_REDIRECT_URL = "index"
+LOGIN_URL = "login"
+LOGOUT_REDIRECT_URL = "index"
