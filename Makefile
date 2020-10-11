@@ -10,3 +10,5 @@ stop:
 manage:
 	docker-compose run $(options) the_loof python manage.py $(cmd)
 
+migrate:
+	docker-compose run $(options) the_loof python manage.py migrate
