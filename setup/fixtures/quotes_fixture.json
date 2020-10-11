@@ -1,6 +1,6 @@
 [
   {
-    "model": "the_loof.quote",
+    "model": "public.quote",
     "pk": 1,
     "fields": {
       "CompanyName": "Goldman Sachs",
@@ -65,7 +65,7 @@
     }
   },
   {
-    "model": "the_loof.quote",
+    "model": "public.quote",
     "pk": 2,
     "fields": {
       "CompanyName": "51job",
@@ -130,7 +130,7 @@
     }
   },
   {
-    "model": "the_loof.quote",
+    "model": "public.quote",
     "pk": 3,
     "fields": {
       "CompanyName": "National Grid",
@@ -195,7 +195,7 @@
     }
   },
   {
-    "model": "the_loof.quote",
+    "model": "public.quote",
     "pk": 4,
     "fields": {
       "CompanyName": "Barrick Gold",
@@ -260,7 +260,7 @@
     }
   },
   {
-    "model": "the_loof.quote",
+    "model": "public.quote",
     "pk": 5,
     "fields": {
       "CompanyName": "SPDR Gold Trust",
@@ -325,7 +325,7 @@
     }
   },
   {
-    "model": "the_loof.quote",
+    "model": "public.quote",
     "pk": 6,
     "fields": {
       "CompanyName": "Nvidia",
@@ -390,7 +390,7 @@
     }
   },
   {
-    "model": "the_loof.quote",
+    "model": "public.quote",
     "pk": 7,
     "fields": {
       "CompanyName": "Amazon",
@@ -455,7 +455,7 @@
     }
   },
   {
-    "model": "the_loof.quote",
+    "model": "public.quote",
     "pk": 8,
     "fields": {
       "CompanyName": "Microsoft",
@@ -520,7 +520,7 @@
     }
   },
   {
-    "model": "the_loof.quote",
+    "model": "public.quote",
     "pk": 9,
     "fields": {
       "CompanyName": "Intel",
@@ -585,7 +585,7 @@
     }
   },
   {
-    "model": "the_loof.quote",
+    "model": "public.quote",
     "pk": 10,
     "fields": {
       "CompanyName": "Audi AG",
@@ -650,7 +650,7 @@
     }
   },
   {
-    "model": "the_loof.quote",
+    "model": "public.quote",
     "pk": 11,
     "fields": {
       "CompanyName": "Gartner",
@@ -715,7 +715,7 @@
     }
   },
   {
-    "model": "the_loof.quote",
+    "model": "public.quote",
     "pk": 12,
     "fields": {
       "CompanyName": "Tesla",
@@ -780,7 +780,7 @@
     }
   },
   {
-    "model": "the_loof.quote",
+    "model": "public.quote",
     "pk": 13,
     "fields": {
       "CompanyName": "Toyota Motor",
@@ -845,7 +845,7 @@
     }
   },
   {
-    "model": "the_loof.quote",
+    "model": "public.quote",
     "pk": 14,
     "fields": {
       "CompanyName": "Alphabet (A shares)",
@@ -910,7 +910,7 @@
     }
   },
   {
-    "model": "the_loof.quote",
+    "model": "public.quote",
     "pk": 15,
     "fields": {
       "CompanyName": "Alphabet (C shares)",
@@ -975,7 +975,7 @@
     }
   },
   {
-    "model": "the_loof.quote",
+    "model": "public.quote",
     "pk": 16,
     "fields": {
       "CompanyName": "Intel",
@@ -1040,7 +1040,7 @@
     }
   },
   {
-    "model": "the_loof.quote",
+    "model": "public.quote",
     "pk": 17,
     "fields": {
       "CompanyName": "Skyworks Solutions",
@@ -1105,7 +1105,7 @@
     }
   },
   {
-    "model": "the_loof.quote",
+    "model": "public.quote",
     "pk": 18,
     "fields": {
       "CompanyName": "Broadcom",
@@ -1170,7 +1170,7 @@
     }
   },
   {
-    "model": "the_loof.quote",
+    "model": "public.quote",
     "pk": 19,
     "fields": {
       "CompanyName": "Broadcom Ltd",
@@ -1235,7 +1235,7 @@
     }
   },
   {
-    "model": "the_loof.quote",
+    "model": "public.quote",
     "pk": 20,
     "fields": {
       "CompanyName": "Qorvo",
@@ -1300,7 +1300,7 @@
     }
   },
   {
-    "model": "the_loof.quote",
+    "model": "public.quote",
     "pk": 21,
     "fields": {
       "CompanyName": "JPMorgan Chase",
@@ -1365,7 +1365,7 @@
     }
   },
   {
-    "model": "the_loof.quote",
+    "model": "public.quote",
     "pk": 22,
     "fields": {
       "CompanyName": "Apple",
@@ -1430,7 +1430,7 @@
     }
   },
   {
-    "model": "the_loof.quote",
+    "model": "public.quote",
     "pk": 23,
     "fields": {
       "CompanyName": "Atlassian",
@@ -1495,7 +1495,7 @@
     }
   },
   {
-    "model": "the_loof.quote",
+    "model": "public.quote",
     "pk": 24,
     "fields": {
       "CompanyName": "NCR",
@@ -1560,7 +1560,7 @@
     }
   },
   {
-    "model": "the_loof.quote",
+    "model": "public.quote",
     "pk": 25,
     "fields": {
       "CompanyName": "Pearson",

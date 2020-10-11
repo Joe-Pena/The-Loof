@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "the_loof.apps.public",
+    "the_loof.apps.accounts",
 ]
 
 MIDDLEWARE = [
@@ -91,6 +93,8 @@ DATABASES = {
     }
 }
 
+# Fixtures
+# FIXTURE_DIRS = BASE_DIR / "setup/fixtures"
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators

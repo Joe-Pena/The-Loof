@@ -1,6 +1,6 @@
 [
   {
-    "model": "the_loof.article",
+    "model": "public.article",
     "pk": 1,
     "fields": {
       "disclosure": "<p><em><a href=\"http://my.fool.com/profile/JohnMaxfield37/info.aspx\">John Maxfield</a> has no position in any of the stocks mentioned. The Motley Fool has no position in any of the stocks mentioned. The Motley Fool has a <a href=\"http://www.fool.com/Legal/fool-disclosure-policy.aspx\">disclosure policy</a>.</em></p>",
@@ -143,7 +143,7 @@
     }
   },
   {
-    "model": "the_loof.article",
+    "model": "public.article",
     "pk": 2,
     "fields": {
       "disclosure": "<p><em><a href=\"http://my.fool.com/profile/TMFBreakerRick/info.aspx\">Rick Munarriz</a> has no position in any of the stocks mentioned. The Motley Fool recommends 51job. The Motley Fool has a <a href=\"http://www.fool.com/Legal/fool-disclosure-policy.aspx\">disclosure policy</a>.</em></p>",
@@ -286,7 +286,7 @@
     }
   },
   {
-    "model": "the_loof.article",
+    "model": "public.article",
     "pk": 3,
     "fields": {
       "disclosure": "<p><em><a href=\"http://my.fool.com/profile/TMFDirtyBird/info.aspx\">Tyler Crowe</a> has no position in any of the stocks mentioned. The Motley Fool owns shares of and recommends National Grid. The Motley Fool has a <a href=\"http://www.fool.com/Legal/fool-disclosure-policy.aspx\">disclosure policy</a>.</em></p>",
@@ -447,7 +447,7 @@
     }
   },
   {
-    "model": "the_loof.article",
+    "model": "public.article",
     "pk": 4,
     "fields": {
       "disclosure": "<p><em><a href=\"http://my.fool.com/profile/TMFProudMonkey/info.aspx\">Scott Levine</a> has no position in any of the stocks mentioned. The Motley Fool has no position in any of the stocks mentioned. The Motley Fool has a <a href=\"http://www.fool.com/Legal/fool-disclosure-policy.aspx\">disclosure policy</a>.</em></p>",
@@ -618,7 +618,7 @@
     }
   },
   {
-    "model": "the_loof.article",
+    "model": "public.article",
     "pk": 5,
     "fields": {
       "disclosure": "<p><em>John Mackey, CEO of Whole Foods Market, an Amazon subsidiary, is a member of The Motley Fool's board of directors. Suzanne Frey, an executive at Alphabet, is a member of The Motley Fool's board of directors. Teresa Kersten is an employee of LinkedIn and is a member of The Motley Fool's board of directors. LinkedIn is owned by Microsoft. <a href=\"http://my.fool.com/profile/TMFNewsie/info.aspx\">Chris Neiger</a> has no position in any of the stocks mentioned. The Motley Fool owns shares of and recommends Alphabet (A shares), Alphabet (C shares), Amazon, Nvidia, and Tesla. The Motley Fool recommends Gartner. The Motley Fool has a <a href=\"http://www.fool.com/Legal/fool-disclosure-policy.aspx\">disclosure policy</a>.</em></p>",
@@ -905,7 +905,7 @@
     }
   },
   {
-    "model": "the_loof.article",
+    "model": "public.article",
     "pk": 6,
     "fields": {
       "disclosure": "<p><em><a href=\"http://my.fool.com/profile/TMFChipFool/info.aspx\">Ashraf Eassa</a> owns shares of Intel. The Motley Fool recommends Intel. The Motley Fool has a <a href=\"http://www.fool.com/Legal/fool-disclosure-policy.aspx\">disclosure policy</a>.</em></p>",
@@ -1057,7 +1057,7 @@
     }
   },
   {
-    "model": "the_loof.article",
+    "model": "public.article",
     "pk": 7,
     "fields": {
       "disclosure": "<p><em><a href=\"http://my.fool.com/profile/TMFNewsie/info.aspx\">Chris Neiger</a> has no position in any of the stocks mentioned. The Motley Fool owns shares of and recommends Apple and Skyworks Solutions. The Motley Fool has the following options: long January 2020 $150 calls on Apple, short January 2020 $155 calls on Apple, short November 2017 $92 puts on Skyworks Solutions, and short January 2018 $105 calls on Skyworks Solutions. The Motley Fool recommends Broadcom Ltd. The Motley Fool has a <a href=\"http://www.fool.com/Legal/fool-disclosure-policy.aspx\">disclosure policy</a>.</em></p>",
@@ -1288,7 +1288,7 @@
     }
   },
   {
-    "model": "the_loof.article",
+    "model": "public.article",
     "pk": 8,
     "fields": {
       "disclosure": "<p><em>Teresa Kersten is an employee of LinkedIn and is a member of The Motley Fool's board of directors. LinkedIn is owned by Microsoft. <a href=\"http://my.fool.com/profile/TMFNoons/info.aspx\">Keith Noonan</a> has no position in any of the stocks mentioned. The Motley Fool owns shares of and recommends Atlassian and Facebook. The Motley Fool recommends Cisco Systems. The Motley Fool has a <a href=\"http://www.fool.com/Legal/fool-disclosure-policy.aspx\">disclosure policy</a>.</em></p>",
@@ -1444,7 +1444,7 @@
     }
   },
   {
-    "model": "the_loof.article",
+    "model": "public.article",
     "pk": 9,
     "fields": {
       "disclosure": "<p><em><a href=\"http://my.fool.com/profile/TMFNoons/info.aspx\">Keith Noonan</a> has no position in any of the stocks mentioned. The Motley Fool recommends NCR. The Motley Fool has a <a href=\"http://www.fool.com/Legal/fool-disclosure-policy.aspx\">disclosure policy</a>.</em></p>",
@@ -1600,7 +1600,7 @@
     }
   },
   {
-    "model": "the_loof.article",
+    "model": "public.article",
     "pk": 10,
     "fields": {
       "disclosure": "<p><em><a href=\"http://my.fool.com/profile/TMFNoons/info.aspx\">Keith Noonan</a> has no position in any of the stocks mentioned. The Motley Fool has no position in any of the stocks mentioned. The Motley Fool has a <a href=\"http://www.fool.com/Legal/fool-disclosure-policy.aspx\">disclosure policy</a>.</em></p>",
