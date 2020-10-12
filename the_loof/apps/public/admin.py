@@ -3,12 +3,7 @@ from .models import Article, Comment
 
 # Register your models here.
 class ArticleAdmin(admin.ModelAdmin):
-    list_display = (
-        "headline",
-        "slug",
-        "article_type",
-        "created",
-    )
+    list_display = ("headline", "slug", "article_type", "created", "article_of_the_day")
     list_filter = ("created",)
     search_fields = (
         "headline",

@@ -3,7 +3,7 @@
 }
 
 #main{
-  padding-top: 74px;
+  padding-top: 114px;
   padding-bottom: 6rem;
 }
 
@@ -36,6 +36,6 @@
 
 @media (min-width: 992px) {
   #main{
-    padding-top: 104px;
+    padding-top: 124px;
     padding-bottom: 6rem;
   }

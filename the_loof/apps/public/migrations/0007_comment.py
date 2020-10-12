@@ -7,22 +7,37 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('public', '0006_article_article_of_the_day'),
+        ("public", "0006_article_article_of_the_day"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Comment',
+            name="Comment",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('username', models.CharField(default='Anonymous User', max_length=80)),
-                ('body', models.TextField()),
-                ('created', models.DateTimeField(auto_now_add=True)),
-                ('active', models.BooleanField(default=False)),
-                ('article', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='comments', to='public.article')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("username", models.CharField(default="Anonymous User", max_length=80)),
+                ("body", models.TextField()),
+                ("created", models.DateTimeField(auto_now_add=True)),
+                ("active", models.BooleanField(default=False)),
+                (
+                    "article",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="comments",
+                        to="public.article",
+                    ),
+                ),
             ],
             options={
-                'ordering': ['created'],
+                "ordering": ["created"],
             },
         ),
     ]

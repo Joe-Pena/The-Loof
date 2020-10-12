@@ -14,9 +14,14 @@ def article(request):
 
 
 class ArticleList(generic.ListView):
-    queryset = Article.objects.order_by("-created")
+    queryset = Article.objects.filter(article_of_the_day=False).order_by("-created")
     template_name = "index.html"
     paginate_by = 5
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["featured_article"] = Article.objects.get(article_of_the_day=True)
+        return context
 
 
 def article_detail(request, slug):
