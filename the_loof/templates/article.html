@@ -1,68 +1,41 @@
-{% extends 'base.html' %}
-{% load crispy_forms_tags %}
-
-{% block title %}{{ article.headline }}{% endblock %}
-
+{% extends 'base.html' %} {% block title %}{{ article.headline }}{% endblock %}
 {% block content %}
 <div class="container article-content-inner">
   <div class="row">
-      <div class="col-sm-12">
-          <div class="article-header">
-              <header>
-                  <div id="adv_text" class="adv-heading"></div>
-                  <h2>{{ article.headline }}</h2>
-                  <h5>{{ article.promo }}</h5>
-              </header>
-          </div>
+    <div class="col-sm-12">
+      <div class="article-header">
+        <header>
+          <div id="adv_text" class="adv-heading"></div>
+          <h2>{{ article.headline }}</h2>
+          <h5>{{ article.promo }}</h5>
+        </header>
       </div>
+    </div>
   </div>
   <div class="row">
-      <main class="col-lg-8">
-          <div class="author-tagline author-inline">
-              <div class="author-and-date">
-                  <div class="author-byline">
-                      <div class="author-name">{{ article.byline }}</div>
-                      <div class="author-username">
-                          <!--(<a href="#">TMFDanielSparks</a>)-->
-                      </div>
-                  </div>
-                  <div class="article-pub-date">
-                      <div class="publication-date">
-                          {{ article.created | date }}
-                      </div>
-                  </div>
-              </div>
+    <main class="col-lg-8">
+      <div class="author-tagline author-inline">
+        <div class="author-and-date">
+          <div class="author-byline">
+            <div class="author-name">{{ article.byline }}</div>
+            <div class="author-username">
+              <!--(<a href="#">TMFDanielSparks</a>)-->
+            </div>
           </div>
-          <section class="article-body">
-              <div class="article-content">
-                  {{ article.body | safe }}
-              </div>
-              <hr />
-              <div class="article-disclosure">
-                  {{ article.disclosure | safe }}
-              </div>
-          </section>
-      </main>
-      {% include 'stocks.html' %}
+          <div class="article-pub-date">
+            <div class="publication-date">{{ article.created | date }}</div>
+          </div>
+        </div>
+      </div>
+      <section class="article-body">
+        <div class="article-content">{{ article.body | safe }}</div>
+        <hr />
+        <div class="article-disclosure">{{ article.disclosure | safe }}</div>
+      </section>
+    </main>
+    {% include 'stocks.html' %}
   </div>
   <hr />
-  {% for comment in comments %}
-    <h3>Comments</h3>
-    <div class="comments">
-        <p class="font-weight-bold">
-            {{ comment.username }}
-            <span class="text-muted font-weight-normal">
-                {{ comment.created }}
-            </span>
-        </p>
-        {{ comment.body | linebreaks }}
-    </div>
-  {% endfor %}
-    <h3>Leave us a comment!</h3>
-    <form method="post">
-        {{ comment_form | crispy}}
-        {% csrf_token %}
-        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-    </form>
+  {% include 'comments_section.html' %}
 </div>
 {% endblock %}
