@@ -42,11 +42,12 @@
   height: 100%;
   opacity: 0.4;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s, opacity 1.5s;
 }
 
 .card.article-card:hover .article-card-img {
   transform: scale(1.1);
+  opacity: 0.5;
 }
 
 /* Stock prices (Set dynamically) */

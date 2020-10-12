@@ -9,13 +9,12 @@
     alt="{{ featured_article.images.0.name }}"
   />
   <div class="card-img-overlay d-flex flex-column justify-content-end">
-    <h2 class="card-title">{{ featured_article.headline }}</h2>
+    <h3 class="card-title">{{ featured_article.headline }}</h3>
     <p class="card-text">
       {{ featured_article.byline }} | {{ featured_article.created | date }}
     </p>
-    <hr />
     <p class="card-text">
-      {{ featured_article.body | truncatewords_html:50 | striptags }}
+      {{ featured_article.body | truncatewords_html:20 | striptags }}
     </p>
   </div>
 </a>
