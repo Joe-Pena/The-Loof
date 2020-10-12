@@ -29,6 +29,9 @@ shell:
 bash:
 	docker-compose run $(options) the_loof bash
 
+adminuser:
+	docker-compose run $(options) the_loof python manage.py createsuperuser
+
 initialize:
 	docker build --force-rm $(options) -t the_loof:latest .
 	docker-compose run $(options) the_loof python manage.py makemigrations
