@@ -2,31 +2,9 @@
 
 {% block content %}
 <div class="container">
-    {% if featured_article %}
+    {% include 'featured_article.html' %}
     <div class="row">
-        <div class="card col-12 shadow-sm shadow-black">
-            <a href="{% url 'public:article_detail' featured_article.slug  %}"><img class="card-img-top" src="{{ featured_article.images.0.url }}" alt="{{ featured_article.images.0.name }}"></a>
-            <div class="card-body">
-                <a class="card-title-link" href="{% url 'public:article_detail' featured_article.slug  %}"><h2 class="card-title">{{ featured_article.headline }}</h2></a>
-                <p class="card-text text-muted h6">{{ featured_article.byline }} | {{ featured_article.created | date }} </p>
-                <hr />
-                <p class="card-text">{{ featured_article.body | truncatewords_html:30 | striptags }}</p>
-                <a href="{% url 'public:article_detail' featured_article.slug  %}" class="text-teal">Read More...</a>
-            </div>
-        </div>
-    </div>
-    {% endif %}
-    <div class="row">
-        <!-- Article Entries Column -->
-        {% for article in article_list %}
-        <a class="card col-md-6 bg-dark border-0 text-white article-card" href="{% url 'public:article_detail' article.slug  %}">
-            <img class="card-img article-card-img" src="{{ article.images.0.url }}" alt="{{ article.images.0.name }}">
-            <div class="card-img-overlay d-flex flex-column justify-content-end">
-                <h4 class="card-title">{{ article.headline }}</h4>
-                <small class="card-text">{{ article.byline }} | {{ article.created | date }}</small>
-            </div>
-        </a>
-        {% endfor %}
+        {% include 'article_cards.html' %}
     </div>
     {% if is_paginated %}
         <nav aria-label="Page navigation container"></nav>
