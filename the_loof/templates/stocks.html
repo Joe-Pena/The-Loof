@@ -1,4 +1,4 @@
-<aside class="col-lg-3 p-l">
+<aside class="col-lg-4 p-l">
   <section class="related-tickers">
       <div class="block-title">
           <hr>
@@ -7,15 +7,17 @@
       <div class="container">
       <div class="row">
       {% for stock in stock_list%}
-        <div class="ticker-row border-top col-sm-6 col-lg-10 left">
+        <div class="ticker-row border-top col-sm-6 col-lg-12 left">
             <div>
                 <h4>{{ stock.company_name }}</h4>
                 <h4>
-                    <span class="ticker">
-                        <a title="Apple Stock Quote" href="#">
-                            {{ stock.exchange }}: <span class="symbol">{{ stock.symbol }}</span>
-                        </a>
-                    </span>
+                  {% if stock.website %}
+                    <a href="{{ stock.website }}">
+                      <span class="symbol">{{ stock.symbol }}</span>
+                    </a>
+                  {% else %}
+                    <span class="symbol">{{ stock.symbol }}</span>
+                  {% endif %}
                 </h4>
                 <aside class="price-quote-container">
                     <h4 class="current-price">
