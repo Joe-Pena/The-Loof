@@ -1,12 +1,16 @@
-:root {
-  --primary: #804199;
-}
-
+/* Main css styles  */
 #main{
   padding-top: 114px;
   padding-bottom: 6rem;
 }
 
+@media (min-width: 992px) {
+  #main{
+    padding-top: 124px;
+    padding-bottom: 6rem;
+  }
+
+/* Navbar  */
 #mainnav .navbar {
  max-height: 700px;
  padding: 0 1rem;
@@ -21,28 +25,33 @@
   color: #161616;
 }
 
-.card-title-link {
-  color: #161616;
-}
-
-.card-title-link:hover {
-  color: #161616;
-  text-decoration: none;
-}
-
+/* Article detail page images */
 .article-body .image img{
   width: 100%;
 }
 
+/* Article Cards */
+.card.article-card {
+  overflow: hidden;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.article-card-img {
+  height: 100%;
+  opacity: 0.4;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card.article-card:hover .article-card-img {
+  transform: scale(1.1);
+}
+
+/* Stock prices (Set dynamically) */
 .price-pos {
   color: #81d404;
 }
 .price-neg {
   color: #da1e1e;
 }
-
-@media (min-width: 992px) {
-  #main{
-    padding-top: 124px;
-    padding-bottom: 6rem;
-  }
