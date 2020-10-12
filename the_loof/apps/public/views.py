@@ -8,7 +8,10 @@ from .models import Article, Stock
 
 
 class ArticleList(generic.ListView):
-    queryset = Article.objects.filter(article_of_the_day=False).order_by("-created")
+    # Ordering by "?" take a big hit on the db, doesn't matter for now
+    #  but I will try to implement a randomize function similar to the ones
+    #  used in the article_detail page for stocks
+    queryset = Article.objects.filter(article_of_the_day=False).order_by("?")
     template_name = "index.html"
     paginate_by = 6
 
