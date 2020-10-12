@@ -19,11 +19,11 @@
     <div class="row">
         <!-- Article Entries Column -->
         {% for article in article_list %}
-        <a class="card col-md-6  shadow-sm shadow-black rounded-0 article-card" href="{% url 'public:article_detail' article.slug  %}">
-            <img class="card-img-top rounded-0 article-card-img" src="{{ article.images.0.url }}" alt="{{ article.images.0.name }}">
-            <div class="card-body article-card-body">
+        <a class="card col-md-6 bg-white text-white article-card" href="{% url 'public:article_detail' article.slug  %}">
+            <img class="card-img article-card-img" src="{{ article.images.0.url }}" alt="{{ article.images.0.name }}">
+            <div class="card-img-overlay">
                 <h5 class="card-title">{{ article.headline }}</h5>
-                <small class="card-text text-muted">{{ article.byline }} | {{ article.created }}</small>
+                <small class="card-text">{{ article.byline }} | {{ article.created }}</small>
             </div>
         </a>
         {% endfor %}
