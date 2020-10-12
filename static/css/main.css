@@ -21,17 +21,34 @@
   color: #161616;
 }
 
-.card-title-link {
-  color: #161616;
+.article-body .image img{
+  width: 100%;
 }
 
-.card-title-link:hover {
+.card.article-card {
+  overflow: hidden;
+  color: #161616;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.card.article-card:hover {
   color: #161616;
   text-decoration: none;
 }
 
-.article-body .image img{
+.card-img-top.article-card-img {
   width: 100%;
+  object-fit: cover;
+  transition: transform .25s ease-in;
+}
+
+.card-img-top.article-card-img:hover {
+  transform: scale(1.1);
+}
+
+.card-body.article-card-body {
+  height: auto;
 }
 
 .price-pos {
