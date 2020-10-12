@@ -3,6 +3,7 @@
 {% block content %}
 <div class="container">
     {% if featured_article %}
+    <div class="row">
         <div class="card col-12 shadow-sm shadow-black">
             <a href="{% url 'public:article_detail' featured_article.slug  %}"><img class="card-img-top" src="{{ featured_article.images.0.url }}" alt="{{ featured_article.images.0.name }}"></a>
             <div class="card-body">
@@ -13,12 +14,13 @@
                 <a href="{% url 'public:article_detail' featured_article.slug  %}" class="text-teal">Read More...</a>
             </div>
         </div>
+    </div>
     {% endif %}
     <div class="row">
         <!-- Article Entries Column -->
-        <div class="col-md-8 mt-3 left">
+      
             {% for article in article_list %}
-                <div class="card mb-4 shadow-sm shadow-black">
+                <div class="card col-md-6  shadow-sm shadow-black">
                     <a href="{% url 'public:article_detail' article.slug  %}"><img class="card-img-top" src="{{ article.images.0.url }}" alt="{{ article.images.0.name }}"></a>
                     <div class="card-body">
                         <a class="card-title-link" href="{% url 'public:article_detail' article.slug  %}"><h2 class="card-title">{{ article.headline }}</h2></a>
@@ -29,7 +31,7 @@
                     </div>
                 </div>
             {% endfor %}
-        </div>
+ 
     </div>
     {% if is_paginated %}
         <nav aria-label="Page navigation container"></nav>
