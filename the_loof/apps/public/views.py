@@ -35,9 +35,23 @@ def article_detail(request, slug):
         comment_form = CommentForm()
 
     # Get stock info
-    max_index = Stock.objects.last().id
-    random_ids = random.sample(range(max_index), 4)
-    stock_list = Stock.objects.filter(id__in=random_ids)
+    max_stock_index = Stock.objects.last().id
+    random_stock_ids = random.sample(range(1, max_stock_index + 1), 4)
+    stock_list = Stock.objects.filter(id__in=random_stock_ids)
+
+    # Get 5 random articles, excluding current
+    curr_article_id = article.id
+    max_article_index = Article.objects.last().id
+    random_article_ids = []
+
+    while len(random_article_ids) != 5:
+        r_id = random.randint(1, max_article_index)
+
+        if r_id != curr_article_id:
+            random_article_ids.append(r_id)
+
+    article_list = Article.objects.filter(id__in=random_article_ids)
+
     return render(
         request,
         template_name,
@@ -47,5 +61,6 @@ def article_detail(request, slug):
             "new_comment": new_comment,
             "comment_form": comment_form,
             "stock_list": stock_list,
+            "article_list": article_list,
         },
     )
