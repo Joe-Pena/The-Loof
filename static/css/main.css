@@ -1,22 +1,23 @@
 /* Main css styles  */
-#main{
+#main {
   padding-top: 114px;
   padding-bottom: 6rem;
 }
 
 @media (min-width: 992px) {
-  #main{
+  #main {
     padding-top: 124px;
     padding-bottom: 6rem;
   }
+}
 
 /* Navbar  */
 #mainnav .navbar {
- max-height: 700px;
- padding: 0 1rem;
+  max-height: 700px;
+  padding: 0 1rem;
 }
 
-.navbar-brand img {
+.navbar-loof-logo {
   height: 40px;
   padding: 0 1rem;
 }
@@ -26,7 +27,7 @@
 }
 
 /* Article detail page images */
-.article-body .image img{
+.article-body .image img {
   width: 100%;
 }
 
