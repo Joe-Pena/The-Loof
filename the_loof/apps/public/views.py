@@ -36,7 +36,7 @@ def article_detail(request, slug):
 
     # Get stock info
     max_index = Stock.objects.last().id
-    random_ids = random.sample(range(max_index), 3)
+    random_ids = random.sample(range(max_index), 4)
     stock_list = Stock.objects.filter(id__in=random_ids)
     return render(
         request,

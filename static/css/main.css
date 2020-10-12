@@ -34,6 +34,13 @@
   width: 100%;
 }
 
+.price-pos {
+  color: #81d404;
+}
+.price-neg {
+  color: #da1e1e;
+}
+
 @media (min-width: 992px) {
   #main{
     padding-top: 124px;

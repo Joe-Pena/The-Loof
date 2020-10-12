@@ -4,8 +4,10 @@
           <hr>
           <h2>Stocks</h2>
       </div>
+      <div class="container">
+      <div class="row">
       {% for stock in stock_list%}
-        <div class="ticker-row border-top">
+        <div class="ticker-row border-top col-sm-6 col-lg-10 left">
             <div>
                 <h4>{{ stock.company_name }}</h4>
                 <h4>
@@ -19,16 +21,18 @@
                     <h4 class="current-price">
                         ${{ stock.current_price }}
                     </h4>
-                    <h4 class="price-change-amount price-neg">
+                    <h4 class="price-change-amount {% if stock.change > 0 %} price-pos {% else %} price-neg {% endif %}">
                         ${{ stock.change }}
                     </h4>
-                    <h4 class="price-change-percent price-neg">
+                    <h4 class="price-change-percent {% if stock.change > 0 %} price-pos {% else %} price-neg {% endif %}">
                         ({{ stock.percent_change | floatformat:3 }}%)
                     </h4>
                 </aside>
             </div>
         </div>
       {% endfor %}
+      </div>
+    </div>
   </section>
   <section class="read-more-section">
       <div class="block-title">
