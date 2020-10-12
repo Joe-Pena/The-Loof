@@ -1,0 +1,45 @@
+<aside class="col-lg-3 p-l">
+  <section class="related-tickers">
+      <div class="block-title">
+          <hr>
+          <h2>Stocks</h2>
+      </div>
+      {% for stock in stock_list%}
+        <div class="ticker-row border-bottom">
+            <div>
+                <h4>{{ stock.company_name }}</h4>
+                <h4>
+                    <span class="ticker">
+                        <a title="Apple Stock Quote" href="#">
+                            {{ stock.exchange }}: <span class="symbol">{{ stock.symbol }}</span>
+                        </a>
+                    </span>
+                </h4>
+                <aside class="price-quote-container">
+                    <h4 class="current-price">
+                        ${{ stock.current_price }}
+                    </h4>
+                    <h4 class="price-change-amount price-neg">
+                        ${{ stock.change }}
+                    </h4>
+                    <h4 class="price-change-percent price-neg">
+                        ({{ stock.percent_change | floatformat:3 }}%)
+                    </h4>
+                </aside>
+            </div>
+        </div>
+      {% endfor %}
+  </section>
+  <section class="read-more-section">
+      <div class="block-title">
+          <hr><h2>Read More</h2>
+      </div>
+      <ul class="two-line-list">
+          <li><a href="#">It is a long established fact that a reader</a></li>
+          <li><a href="#">Many desktop publishing packages and web page editors now use</a></li>
+          <li><a href="#">Contrary to popular belief, Lorem Ipsum is not simply random text</a></li>
+          <li><a href="#">There are many variations of passa</a></li>
+          <li><a href="#" >If you are going to use a passage of Lorem Ipsum</a></li>
+      </ul>
+  </section>
+</aside>

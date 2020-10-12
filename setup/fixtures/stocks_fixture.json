@@ -1,0 +1,377 @@
+[
+  {
+    "model": "public.stock",
+    "pk": 1,
+    "fields": {
+      "company_name": "Goldman Sachs",
+      "symbol": "GS",
+      "exchange": "NYSE",
+      "exchange_name": "NYSE",
+      "instrument_id": 203781,
+      "change": 1.56,
+      "current_price": 242.35,
+      "percent_change": 0.0064786743635533,
+      "website": "http://www.gs.com/"
+    }
+  },
+  {
+    "model": "public.stock",
+    "pk": 2,
+    "fields": {
+      "company_name": "51job",
+      "symbol": "JOBS",
+      "exchange": "NASDAQ",
+      "exchange_name": "NASDAQ",
+      "instrument_id": 208933,
+      "change": -1.44,
+      "current_price": 60.99,
+      "percent_change": -0.0230658337337818,
+      "website": "http://www.51job.com/"
+    }
+  },
+  {
+    "model": "public.stock",
+    "pk": 3,
+    "fields": {
+      "company_name": "National Grid",
+      "symbol": "NGG",
+      "exchange": "NYSE",
+      "exchange_name": "NYSE",
+      "instrument_id": 207292,
+      "change": -0.34,
+      "current_price": 60.14,
+      "percent_change": -0.00562169312169312,
+      "website": "http://www.nationalgrid.com/"
+    }
+  },
+  {
+    "model": "public.stock",
+    "pk": 4,
+    "fields": {
+      "company_name": "Barrick Gold",
+      "symbol": "ABX",
+      "exchange": "NYSE",
+      "exchange_name": "NYSE",
+      "instrument_id": 206868,
+      "change": -0.07,
+      "current_price": 14.04,
+      "percent_change": -0.004961020552799433,
+      "website": "http://www.barrick.com/"
+    }
+  },
+  {
+    "model": "public.stock",
+    "pk": 5,
+    "fields": {
+      "company_name": "SPDR Gold Trust",
+      "symbol": "GLD",
+      "exchange": "NYSEMKT",
+      "exchange_name": "NYSE MKT",
+      "instrument_id": 208812,
+      "change": -0.11,
+      "current_price": 122.02,
+      "percent_change": -0.000900679603700974,
+      "website": "http://www.streettracksgoldshares.com/"
+    }
+  },
+  {
+    "model": "public.stock",
+    "pk": 6,
+    "fields": {
+      "company_name": "Nvidia",
+      "symbol": "NVDA",
+      "exchange": "NASDAQ",
+      "exchange_name": "NASDAQ",
+      "instrument_id": 204770,
+      "change": 11.39,
+      "current_price": 216.71,
+      "percent_change": 0.0554743814533411,
+      "website": "http://www.nvidia.com/"
+    }
+  },
+  {
+    "model": "public.stock",
+    "pk": 7,
+    "fields": {
+      "company_name": "Amazon",
+      "symbol": "AMZN",
+      "exchange": "NASDAQ",
+      "exchange_name": "NASDAQ",
+      "instrument_id": 202816,
+      "change": -4.17,
+      "current_price": 1124.96,
+      "percent_change": -0.00369310885371924,
+      "website": "http://www.amazon.com/"
+    }
+  },
+  {
+    "model": "public.stock",
+    "pk": 8,
+    "fields": {
+      "company_name": "Microsoft",
+      "symbol": "MSFT",
+      "exchange": "NASDAQ",
+      "exchange_name": "NASDAQ",
+      "instrument_id": 204577,
+      "change": -0.63,
+      "current_price": 83.46,
+      "percent_change": -0.00749197288619336,
+      "website": "http://www.microsoft.com/"
+    }
+  },
+  {
+    "model": "public.stock",
+    "pk": 9,
+    "fields": {
+      "company_name": "Intel",
+      "symbol": "INTC",
+      "exchange": "NASDAQ",
+      "exchange_name": "NASDAQ",
+      "instrument_id": 204036,
+      "change": -0.71,
+      "current_price": 45.59,
+      "percent_change": -0.0153347732181426,
+      "website": "http://www.intel.com/"
+    }
+  },
+  {
+    "model": "public.stock",
+    "pk": 10,
+    "fields": {
+      "company_name": "Audi AG",
+      "symbol": "AUDVF",
+      "exchange": "NASDAQOTH",
+      "exchange_name": "OTC",
+      "instrument_id": 275270,
+      "change": 0.0,
+      "current_price": 815.15,
+      "percent_change": 0.0,
+      "website": ""
+    }
+  },
+  {
+    "model": "public.stock",
+    "pk": 11,
+    "fields": {
+      "company_name": "Gartner",
+      "symbol": "IT",
+      "exchange": "NYSE",
+      "exchange_name": "NYSE",
+      "instrument_id": 204070,
+      "change": -0.6,
+      "current_price": 116.74,
+      "percent_change": -0.00511334583262315,
+      "website": "http://www.gartner.com/"
+    }
+  },
+  {
+    "model": "public.stock",
+    "pk": 12,
+    "fields": {
+      "company_name": "Tesla",
+      "symbol": "TSLA",
+      "exchange": "NASDAQ",
+      "exchange_name": "NASDAQ",
+      "instrument_id": 224257,
+      "change": 0.58,
+      "current_price": 303.57,
+      "percent_change": 0.00191425459586125,
+      "website": "http://www.teslamotors.com/"
+    }
+  },
+  {
+    "model": "public.stock",
+    "pk": 13,
+    "fields": {
+      "company_name": "Toyota Motor",
+      "symbol": "TM",
+      "exchange": "NYSE",
+      "exchange_name": "NYSE",
+      "instrument_id": 205771,
+      "change": -0.8327,
+      "current_price": 124.6273,
+      "percent_change": -0.00663717519528136,
+      "website": "http://www.toyota.co.jp/"
+    }
+  },
+  {
+    "model": "public.stock",
+    "pk": 14,
+    "fields": {
+      "company_name": "Alphabet (A shares)",
+      "symbol": "GOOGL",
+      "exchange": "NASDAQ",
+      "exchange_name": "NASDAQ",
+      "instrument_id": 203768,
+      "change": -3.89,
+      "current_price": 1043.83,
+      "percent_change": -0.00371282403695644,
+      "website": ""
+    }
+  },
+  {
+    "model": "public.stock",
+    "pk": 15,
+    "fields": {
+      "company_name": "Alphabet (C shares)",
+      "symbol": "GOOG",
+      "exchange": "NASDAQ",
+      "exchange_name": "NASDAQ",
+      "instrument_id": 288965,
+      "change": -3.01,
+      "current_price": 1028.25,
+      "percent_change": -0.00291875957566472,
+      "website": ""
+    }
+  },
+  {
+    "model": "public.stock",
+    "pk": 16,
+    "fields": {
+      "company_name": "Intel",
+      "symbol": "INTC",
+      "exchange": "NASDAQ",
+      "exchange_name": "NASDAQ",
+      "instrument_id": 204036,
+      "change": -0.71,
+      "current_price": 45.59,
+      "percent_change": -0.0153347732181426,
+      "website": "http://www.intel.com/"
+    }
+  },
+  {
+    "model": "public.stock",
+    "pk": 17,
+    "fields": {
+      "company_name": "Skyworks Solutions",
+      "symbol": "SWKS",
+      "exchange": "NASDAQ",
+      "exchange_name": "NASDAQ",
+      "instrument_id": 205616,
+      "change": -0.36,
+      "current_price": 110.76,
+      "percent_change": -0.00323974082073434,
+      "website": "http://www.skyworksinc.com/"
+    }
+  },
+  {
+    "model": "public.stock",
+    "pk": 18,
+    "fields": {
+      "company_name": "Broadcom",
+      "symbol": "BRCM.DL",
+      "exchange": "UNKNOWN",
+      "exchange_name": "Unknown",
+      "instrument_id": 202994,
+      "change": 0.0,
+      "current_price": 0.0,
+      "percent_change": 0.0,
+      "website": "http://www.broadcom.com/"
+    }
+  },
+  {
+    "model": "public.stock",
+    "pk": 19,
+    "fields": {
+      "company_name": "Broadcom Ltd",
+      "symbol": "AVGO",
+      "exchange": "NASDAQ",
+      "exchange_name": "NASDAQ",
+      "instrument_id": 222667,
+      "change": -0.15,
+      "current_price": 265.49,
+      "percent_change": -0.000564673994880289,
+      "website": "http://www.broadcom.com/"
+    }
+  },
+  {
+    "model": "public.stock",
+    "pk": 20,
+    "fields": {
+      "company_name": "Qorvo",
+      "symbol": "QRVO",
+      "exchange": "NASDAQ",
+      "exchange_name": "NASDAQ",
+      "instrument_id": 334884,
+      "change": 0.25,
+      "current_price": 79.72,
+      "percent_change": 0.00314584119793633,
+      "website": "http://www.qorvo.com/"
+    }
+  },
+  {
+    "model": "public.stock",
+    "pk": 21,
+    "fields": {
+      "company_name": "JPMorgan Chase",
+      "symbol": "JPM",
+      "exchange": "NYSE",
+      "exchange_name": "NYSE",
+      "instrument_id": 204149,
+      "change": 0.31,
+      "current_price": 97.94,
+      "percent_change": 0.00317525350814299,
+      "website": "http://www.jpmorganchase.com/"
+    }
+  },
+  {
+    "model": "public.stock",
+    "pk": 22,
+    "fields": {
+      "company_name": "Apple",
+      "symbol": "AAPL",
+      "exchange": "NASDAQ",
+      "exchange_name": "NASDAQ",
+      "instrument_id": 202686,
+      "change": -0.43,
+      "current_price": 174.82,
+      "percent_change": -0.00245363766048502,
+      "website": "http://www.apple.com/"
+    }
+  },
+  {
+    "model": "public.stock",
+    "pk": 23,
+    "fields": {
+      "company_name": "Atlassian",
+      "symbol": "TEAM",
+      "exchange": "NASDAQ",
+      "exchange_name": "NASDAQ",
+      "instrument_id": 336663,
+      "change": -0.07,
+      "current_price": 52.26,
+      "percent_change": -0.00133766481941525,
+      "website": ""
+    }
+  },
+  {
+    "model": "public.stock",
+    "pk": 24,
+    "fields": {
+      "company_name": "NCR",
+      "symbol": "NCR",
+      "exchange": "NYSE",
+      "exchange_name": "NYSE",
+      "instrument_id": 204622,
+      "change": -0.31,
+      "current_price": 31.09,
+      "percent_change": -0.00987261146496815,
+      "website": "http://www.ncr.com/"
+    }
+  },
+  {
+    "model": "public.stock",
+    "pk": 25,
+    "fields": {
+      "company_name": "Pearson",
+      "symbol": "PSO",
+      "exchange": "NYSE",
+      "exchange_name": "NYSE",
+      "instrument_id": 205140,
+      "change": -0.04,
+      "current_price": 9.07,
+      "percent_change": -0.0043907793633369925,
+      "website": "http://www.pearson.com/"
+    }
+  }
+]

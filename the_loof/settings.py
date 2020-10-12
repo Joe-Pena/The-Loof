@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "crispy_forms",
     "the_loof.apps.public",
     "the_loof.apps.accounts",
+    "utils",
 ]
 
 MIDDLEWARE = [

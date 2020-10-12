@@ -2,15 +2,9 @@ from the_loof.apps.public.forms import CommentForm
 from django.shortcuts import get_object_or_404, render
 from django.views import generic
 
-from .models import Article
+import random
 
-
-def index(request):
-    return render(request, "index.html")
-
-
-def article(request):
-    return render(request, "article.html")
+from .models import Article, Stock
 
 
 class ArticleList(generic.ListView):
@@ -35,12 +29,15 @@ def article_detail(request, slug):
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
             new_comment = comment_form.save(commit=False)
-            # Link the comment to an article before saving
             new_comment.article = article
             new_comment.save()
     else:
         comment_form = CommentForm()
 
+    # Get stock info
+    max_index = Stock.objects.last().id
+    random_ids = random.sample(range(max_index), 3)
+    stock_list = Stock.objects.filter(id__in=random_ids)
     return render(
         request,
         template_name,
@@ -49,5 +46,6 @@ def article_detail(request, slug):
             "comments": comments,
             "new_comment": new_comment,
             "comment_form": comment_form,
+            "stock_list": stock_list,
         },
     )

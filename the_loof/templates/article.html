@@ -17,7 +17,7 @@
       </div>
   </div>
   <div class="row">
-      <main class="col-lg-10">
+      <main class="col-lg-9">
           <div class="author-tagline author-inline">
               <div class="author-and-date">
                   <div class="author-byline">
@@ -37,116 +37,17 @@
               <div class="article-content">
                   {{ article.body | safe }}
               </div>
+              <hr />
               <div class="article-disclosure">
                   {{ article.disclosure | safe }}
               </div>
           </section>
       </main>
-      <aside class="col-lg-2 p-l">
-          <section class="related-tickers">
-              <div class="block-title">
-                  <hr><h2>Stocks</h2>
-              </div>
-              <div class="ticker-row">
-                  <div>
-                      <span class="image-wrap">
-                          <a href="#">
-                              <img src="images/related-1.png" class="img-responsive" alt="">
-                          </a>
-                      </span>
-                      <h3>Apple</h3>
-                      <h4>
-                          <span class="ticker">
-                              <a title="Apple Stock Quote" href="#">
-                                  NASDAQ:<span class="symbol">AAPL</span>
-                              </a>
-                          </span>
-                      </h4>
-                      <aside class="price-quote-container">
-                          <h4 class="current-price">
-                              $170.15
-                          </h4>
-                          <h4 class="price-change-amount price-neg">
-                              $0.95
-                          </h4>
-                          <h4 class="price-change-percent price-neg">
-                              (-0.56%)
-                          </h4>
-                      </aside>
-                  </div>
-              </div>
-              <div class="ticker-row">
-                  <div>
-                      <span class="image-wrap">
-                          <a href="#">
-                              <img src="images/related-2.png" class="img-responsive" alt="">
-                          </a>
-                      </span>
-                      <h3>Tesla</h3>
-                      <h4>
-                          <span class="ticker">
-                              <a title="Tesla Stock Quote" href="#">
-                                  NASDAQ:<span class="symbol">TSLA</span>
-                              </a>
-                          </span>
-                      </h4>
-                      <aside class="price-quote-container">
-                          <h4 class="current-price">
-                              $315.05
-                          </h4>
-                          <h4 class="price-change-amount price-pos">
-                              $2.55
-                          </h4>
-                          <h4 class="price-change-percent price-pos">
-                              (0.82%)
-                          </h4>
-                      </aside>
-                  </div>
-              </div>
-              <div class="ticker-row">
-                  <div>
-                      <span class="image-wrap">
-                          <a href="#">
-                              <img src="images/related-3.png" class="img-responsive" alt="">
-                          </a>
-                      </span>
-                      <h3>Twitter</h3>
-                      <h4>
-                          <span class="ticker">
-                              <a title="Tesla Stock Quote" href="#">
-                                  NYSE:<span class="symbol">TWTR</span>
-                              </a>
-                          </span>
-                      </h4>
-                      <aside class="price-quote-container">
-                          <h4 class="current-price">
-                              $315.05
-                          </h4>
-                          <h4 class="price-change-amount price-pos">
-                              $2.55
-                          </h4>
-                          <h4 class="price-change-percent price-pos">
-                              (0.82%)
-                          </h4>
-                      </aside>
-                  </div>
-              </div>
-          </section>
-          <section class="read-more-section">
-              <div class="block-title">
-                  <hr><h2>Read More</h2>
-              </div>
-              <ul class="two-line-list">
-                  <li><a href="#">It is a long established fact that a reader</a></li>
-                  <li><a href="#">Many desktop publishing packages and web page editors now use</a></li>
-                  <li><a href="#">Contrary to popular belief, Lorem Ipsum is not simply random text</a></li>
-                  <li><a href="#">There are many variations of passa</a></li>
-                  <li><a href="#" >If you are going to use a passage of Lorem Ipsum</a></li>
-              </ul>
-          </section>
-      </aside>
+      {% include 'stocks.html' %}
   </div>
+  <hr />
   {% for comment in comments %}
+    <h3>Comments</h3>
     <div class="comments">
         <p class="font-weight-bold">
             {{ comment.username }}
@@ -157,14 +58,11 @@
         {{ comment.body | linebreaks }}
     </div>
   {% endfor %}
-
-  <div class="card-body">
-        <h3>Leave us a comment!</h3>
-        <form method="post">
-            {{ comment_form | crispy}}
-            {% csrf_token %}
-            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-        </form>
-  </div>
+    <h3>Leave us a comment!</h3>
+    <form method="post">
+        {{ comment_form | crispy}}
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+    </form>
 </div>
 {% endblock %}

@@ -65,3 +65,15 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment {self.body} by {self.username}"
+
+
+class Stock(models.Model):
+    company_name = models.CharField(max_length=50, blank=False, null=False)
+    symbol = models.CharField(max_length=10, blank=False, null=False)
+    exchange = models.CharField(max_length=10, blank=False, null=False)
+    exchange_name = models.CharField(max_length=50, blank=False, null=False)
+    instrument_id = models.IntegerField()
+    change = models.FloatField()
+    current_price = models.FloatField()
+    percent_change = models.FloatField()
+    website = models.URLField()
