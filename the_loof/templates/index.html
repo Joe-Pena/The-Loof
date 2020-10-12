@@ -19,9 +19,9 @@
     <div class="row">
         <!-- Article Entries Column -->
         {% for article in article_list %}
-        <a class="card col-md-6 bg-white text-white article-card" href="{% url 'public:article_detail' article.slug  %}">
+        <a class="card col-md-6 bg-dark border-0 text-white article-card" href="{% url 'public:article_detail' article.slug  %}">
             <img class="card-img article-card-img" src="{{ article.images.0.url }}" alt="{{ article.images.0.name }}">
-            <div class="card-img-overlay">
+            <div class="card-img-overlay article-card-body">
                 <h5 class="card-title">{{ article.headline }}</h5>
                 <small class="card-text">{{ article.byline }} | {{ article.created }}</small>
             </div>

@@ -31,6 +31,17 @@
   padding-right: 0;
 }
 
+.article-card-img {
+  height: 100%;
+  opacity: 0.4;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card.article-card:hover .article-card-img {
+  transform: scale(1.1);
+}
+
 .price-pos {
   color: #81d404;
 }
