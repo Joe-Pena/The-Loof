@@ -1,18 +1,15 @@
-from django.http import request
-from django.http.response import HttpResponseRedirect, JsonResponse
-from the_loof.apps.public.forms import CommentForm
 from django.shortcuts import get_object_or_404, render
 from django.views import generic
-from django.core import serializers
 
 import random
 
+from the_loof.apps.public.forms import CommentForm
 from .models import Article, Stock
 
 
 class ArticleList(generic.ListView):
     queryset = Article.objects.filter(article_of_the_day=False).order_by("-created")
-    template_name = "index.html"
+    template_name = "homepage/home.html"
     paginate_by = 6
 
     def get_context_data(self, **kwargs):
@@ -22,13 +19,12 @@ class ArticleList(generic.ListView):
 
 
 def article_detail(request, slug):
-    template_name = "article.html"
+    template_name = "article_detail/article.html"
     article = get_object_or_404(Article, slug=slug)
     comments = article.comments.filter(active=True)
     new_comment = None
-    # comment_form = CommentForm()
 
-    # If posting comment
+    # If posting a comment
     if request.is_ajax and request.method == "POST":
         comment_form = CommentForm(request.POST)
         if comment_form.is_valid():
@@ -36,16 +32,20 @@ def article_detail(request, slug):
             new_comment.article = article
             new_comment.save()
 
-            return render(request, "comment.html", {"comment": new_comment})
+            # Return a rendered comment template
+            # instead of a JSON response. This is
+            # to be able to use Django template filters
+            return render(request, "comments/comment.html", {"comment": new_comment})
     else:
         comment_form = CommentForm()
 
-    # Get stock info
+    # Get random stocks info
+    # NOTE: Trying to avoid using Stock.objects.filter('?')
     max_stock_index = Stock.objects.last().id
     random_stock_ids = random.sample(range(1, max_stock_index + 1), 4)
     stock_list = Stock.objects.filter(id__in=random_stock_ids)
 
-    # Get 5 random articles, excluding current
+    # Get random articles, excluding current
     curr_article_id = article.id
     max_article_index = Article.objects.last().id
     random_article_ids = []
