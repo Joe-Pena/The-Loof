@@ -18,9 +18,6 @@
         <div class="author-and-date">
           <div class="author-byline">
             <div class="author-name">{{ article.byline }}</div>
-            <div class="author-username">
-              <!--(<a href="#">TMFDanielSparks</a>)-->
-            </div>
           </div>
           <div class="article-pub-date">
             <div class="publication-date">{{ article.created | date }}</div>
@@ -33,9 +30,9 @@
         <div class="article-disclosure">{{ article.disclosure | safe }}</div>
       </section>
     </main>
-    {% include 'stocks.html' %}
+    {% include 'stocks/stocks.html' %}
   </div>
   <hr />
-  {% include 'comments_section.html' %}
+  {% include 'comments/comments_section.html' %}
 </div>
 {% endblock %}

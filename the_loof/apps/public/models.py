@@ -1,6 +1,10 @@
 from django.db import models, transaction
 
 # Create your models here.
+# Article model is full of JSONfields merely
+# for convinience. It was the most speedy approach
+# for this ocassion, while maintaining the ability
+# to query the data.
 class Article(models.Model):
     headline = models.CharField(max_length=200, unique=True, blank=False, null=False)
     slug = models.SlugField(max_length=200, unique=True, blank=False, null=False)
@@ -50,6 +54,8 @@ class Article(models.Model):
             return super(Article, self).save(*args, **kwargs)
 
 
+# Simple comment model, it maps to an article
+# through it's foreign key
 class Comment(models.Model):
     article = models.ForeignKey(
         Article, on_delete=models.CASCADE, related_name="comments"
@@ -58,6 +64,8 @@ class Comment(models.Model):
     body = models.TextField()
     created = models.DateTimeField(auto_now_add=True)
     # Active field in the case of spam coming in.
+    # Not currently in use, but a filtering function
+    # could be implemented later on.
     active = models.BooleanField(default=True)
 
     class Meta:
@@ -67,6 +75,8 @@ class Comment(models.Model):
         return f"Comment {self.body} by {self.username}"
 
 
+# From stock fixture, only took what I believed to be
+# necessary for this assignment
 class Stock(models.Model):
     company_name = models.CharField(max_length=50, blank=False, null=False)
     symbol = models.CharField(max_length=10, blank=False, null=False)

@@ -1,13 +1,12 @@
 /* Main css styles  */
 #main {
-  padding-top: 114px;
-  padding-bottom: 6rem;
+  padding-top: 6rem;
+  padding-bottom: 1rem;
 }
 
 @media (min-width: 992px) {
   #main {
-    padding-top: 124px;
-    padding-bottom: 6rem;
+    padding-top: 8rem;
   }
 }
 

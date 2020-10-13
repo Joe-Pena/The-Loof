@@ -22,6 +22,9 @@ PROJECT_DIR = BASE_DIR.joinpath("the_loof")
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# NOTE: I know, but I'll just leave it here in order
+# to not have to send out environment variables out
+# just to be able to run the app.
 SECRET_KEY = "3&u^ca5$lf$*4!16*0nwj!ufb7%ac#6yqb@f#d^n_8-63)y(m8"
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -79,6 +82,9 @@ WSGI_APPLICATION = "the_loof.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+# These variables will get setup during the building
+# of the Docker image.
+
 POSTGRES_DB = os.environ.get("POSTGRES_DB", default="")
 POSTGRES_USER = os.environ.get("POSTGRES_USER", default="")
 POSTGRES_PASSWORD = os.environ.get("POSTGRES_PASSWORD", default="")
@@ -96,7 +102,7 @@ DATABASES = {
 }
 
 # Fixtures
-# FIXTURE_DIRS = BASE_DIR / "setup/fixtures"
+FIXTURE_DIRS = BASE_DIR / "fixtures"
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
