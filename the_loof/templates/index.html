@@ -1,7 +1,10 @@
 {% extends 'base.html' %} {% block content %}
 <div class="container">
-  <div class="row">{% include 'featured_article.html' %}</div>
-  <div class="row">{% include 'article_cards.html' %}</div>
+  <div class="row">
+    <h2>Featured Today:</h2>
+  </div>
+  <div class="row mb-3 mb-lg-5">{% include 'featured_article.html' %}</div>
+  <div class="row mb-2">{% include 'article_cards.html' %}</div>
   {% include 'pagination_nav.html' %}
 </div>
 {% endblock %}
