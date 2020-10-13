@@ -1,6 +1,9 @@
+from django.http import request
+from django.http.response import HttpResponseRedirect, JsonResponse
 from the_loof.apps.public.forms import CommentForm
 from django.shortcuts import get_object_or_404, render
 from django.views import generic
+from django.core import serializers
 
 import random
 
@@ -26,14 +29,17 @@ def article_detail(request, slug):
     article = get_object_or_404(Article, slug=slug)
     comments = article.comments.filter(active=True)
     new_comment = None
+    # comment_form = CommentForm()
 
     # If posting comment
-    if request.method == "POST":
-        comment_form = CommentForm(data=request.POST)
+    if request.is_ajax and request.method == "POST":
+        comment_form = CommentForm(request.POST)
         if comment_form.is_valid():
             new_comment = comment_form.save(commit=False)
             new_comment.article = article
             new_comment.save()
+
+            return render(request, "comment.html", {"comment": new_comment})
     else:
         comment_form = CommentForm()
 
