@@ -41,7 +41,7 @@
 .article-card-img {
   height: 100%;
   opacity: 0.4;
-  object-fit: cover;
+  object-fit: fill;
   transition: transform 0.5s, opacity 1.5s;
 }
 
