@@ -102,7 +102,7 @@ DATABASES = {
 }
 
 # Fixtures
-FIXTURE_DIRS = BASE_DIR / "fixtures"
+# FIXTURE_DIRS = BASE_DIR / "fixtures"
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators

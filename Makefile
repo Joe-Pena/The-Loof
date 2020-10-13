@@ -21,7 +21,7 @@ migrations:
 	docker-compose run $(options) the_loof python manage.py makemigrations
 
 populate-db:
-	docker-compose run $(options) the_loof python manage.py loaddata ./setup/fixtures/db_backup.json
+	docker-compose run $(options) the_loof python manage.py loaddata ./fixtures/db_backup.json
 
 shell:
 	docker-compose run $(options) the_loof python manage.py shell
@@ -36,5 +36,5 @@ initialize:
 	docker build --force-rm $(options) -t the_loof:latest .
 	docker-compose run $(options) the_loof python manage.py makemigrations
 	docker-compose run $(options) the_loof python manage.py migrate
-	docker-compose run $(options) the_loof python manage.py loaddata ./setup/fixtures/db_backup.json
+	docker-compose run $(options) the_loof python manage.py loaddata ./fixtures/db_backup.json
 	docker-compose up --remove-orphans $(options)
