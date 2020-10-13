@@ -3,17 +3,49 @@
   <h3>Comments</h3>
   <span>{{ article.comments.count }} comments</span>
 </div>
-{% for comment in comments %}
-<div class="comments">
+<div class="comments" id="comments-section">
+  {% for comment in comments %}
   <p class="font-weight-bold">
     {{ comment.username }}
     <span class="text-muted font-weight-normal"> {{ comment.created }} </span>
   </p>
-  {{ comment.body | linebreaks }}
+  {{ comment.body | linebreaks }} {% endfor %}
 </div>
-{% endfor %}
 <h3>Leave us a comment!</h3>
-<form method="post">
-  {{ comment_form | crispy}} {% csrf_token %}
+<form method="post" id="comment-form">
+  {% csrf_token %} {{ comment_form | crispy}}
   <button type="submit" class="btn btn-primary btn-lg">Submit</button>
 </form>
+
+{% block javascript %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  $(document).on('submit', '#comment-form', function (e) {
+    e.preventDefault();
+
+    $.ajax({
+      type: 'POST',
+      url: '{% url "public:article_detail" article.slug %}',
+      data: {
+        body: $('#id_body').val(),
+        csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+      },
+      success: function (json) {
+        document.getElementById('comment-form').reset();
+        $('#comments-section').prepend(
+          `
+          <p class="font-weight-bold">
+          ${json.username}
+          <span class="text-muted font-weight-normal"> ${json.created} </span>
+          </p>
+          ${json.body}
+          `
+        );
+      },
+      error: function (xhr, errmsg, err) {
+        console.log(errmsg);
+      },
+    });
+  });
+</script>
+{% endblock javascript %}
