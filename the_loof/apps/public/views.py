@@ -39,13 +39,7 @@ def article_detail(request, slug):
             new_comment.article = article
             new_comment.save()
 
-            response_object = {
-                "username": new_comment.username,
-                "created": new_comment.created,
-                "body": new_comment.body,
-            }
-
-            return JsonResponse(response_object)
+            return render(request, "comment.html", {"comment": new_comment})
     else:
         comment_form = CommentForm()
 
@@ -79,24 +73,3 @@ def article_detail(request, slug):
             "article_list": article_list,
         },
     )
-
-
-# def post_comment(request, slug):
-#     curr_article = get_object_or_404(Article, slug=slug)
-#     new_comment = None
-
-#     if request.is_ajax and request.method == "POST":
-#         print("incoming POST ------")
-#         comment_form = CommentForm(request.POST)
-#         if comment_form.is_valid():
-#             print("received request")
-#             new_comment = comment_form.save(commit=False)
-#             new_comment.article = curr_article
-#             new_comment.save()
-
-#             ser_instance = serializers.serialize("json", [new_comment])
-#             return JsonResponse({"instance": ser_instance}, status=200)
-#         else:
-#             return JsonResponse(
-#                 {"msg": "There was an issue with your submission"}, status=500
-#             )
