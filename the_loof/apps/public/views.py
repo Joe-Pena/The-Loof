@@ -71,3 +71,11 @@ def post_comment(request, slug):
             # instead of a JSON response. This is
             # to be able to use Django template filters
             return render(request, "comments/comment.html", {"comment": new_comment})
+
+
+def shuffle_stocks(request):
+    max_stock_index = Stock.objects.last().id
+    random_stock_ids = random.sample(range(1, max_stock_index + 1), 4)
+    stock_list = Stock.objects.filter(id__in=random_stock_ids)
+
+    return render(request, "stocks/stocks.html", {"stock_list": stock_list})

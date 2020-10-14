@@ -1,7 +1,7 @@
-<section class="related-tickers">
+<section id="stocks-section" class="related-tickers">
   <div class="block-title d-flex justify-content-between">
     <h2>Stocks</h2>
-    <a href="#" class="d-flex align-items-center"><icon class="fa fa-sync-alt"></a>
+    <div id="shuffle-stocks-btn" class="d-flex align-items-center"><icon class="fa fa-sync-alt"></div>
   </div>
   <div class="container">
     <div class="row">
@@ -37,4 +37,25 @@
     </div>
   </div>
 </section>
+
+{% block javascript %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  $("#shuffle-stocks-btn").click(function (e) {
+    $.ajax({
+      type: 'GET',
+      url: '{% url "public:shuffle_stocks" %}',
+      data: {
+        csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+      },
+      success: function (el) {
+        $('#stocks-section').replaceWith(el)
+      },
+      error: function (xhr, errmsg, err) {
+        console.log(errmsg);
+      },
+    });
+  });
+</script>
+{% endblock javascript %}
 
