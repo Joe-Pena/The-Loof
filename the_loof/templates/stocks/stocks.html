@@ -1,42 +1,40 @@
-<aside class="col-lg-4 p-l">
-  <section class="related-tickers">
-    <div class="block-title d-flex justify-content-between">
-      <h2>Stocks</h2>
-      <a href="#" class="d-flex align-items-center"><icon class="fa fa-sync-alt"></a>
-    </div>
-    <div class="container">
-      <div class="row">
-        {% for stock in stock_list%}
-        <div class="ticker-row border-top col-sm-6 col-lg-12 left">
-          <div>
-            <h4>{{ stock.company_name }}</h4>
-            <h4>
-              {% if stock.website %}
-              <a href="{{ stock.website }}">
-                <span class="symbol">{{ stock.symbol }}</span>
-              </a>
-              {% else %}
+<section class="related-tickers">
+  <div class="block-title d-flex justify-content-between">
+    <h2>Stocks</h2>
+    <a href="#" class="d-flex align-items-center"><icon class="fa fa-sync-alt"></a>
+  </div>
+  <div class="container">
+    <div class="row">
+      {% for stock in stock_list%}
+      <div class="ticker-row border-top col-sm-6 col-lg-12 left">
+        <div>
+          <h4>{{ stock.company_name }}</h4>
+          <h4>
+            {% if stock.website %}
+            <a href="{{ stock.website }}">
               <span class="symbol">{{ stock.symbol }}</span>
-              {% endif %}
+            </a>
+            {% else %}
+            <span class="symbol">{{ stock.symbol }}</span>
+            {% endif %}
+          </h4>
+          <aside class="price-quote-container">
+            <h4 class="current-price">${{ stock.current_price }}</h4>
+            <h4
+              class="price-change-amount {% if stock.change > 0 %} price-pos {% else %} price-neg {% endif %}"
+            >
+              ${{ stock.change }}
             </h4>
-            <aside class="price-quote-container">
-              <h4 class="current-price">${{ stock.current_price }}</h4>
-              <h4
-                class="price-change-amount {% if stock.change > 0 %} price-pos {% else %} price-neg {% endif %}"
-              >
-                ${{ stock.change }}
-              </h4>
-              <h4
-                class="price-change-percent {% if stock.change > 0 %} price-pos {% else %} price-neg {% endif %}"
-              >
-                ({{ stock.percent_change | floatformat:3 }}%)
-              </h4>
-            </aside>
-          </div>
+            <h4
+              class="price-change-percent {% if stock.change > 0 %} price-pos {% else %} price-neg {% endif %}"
+            >
+              ({{ stock.percent_change | floatformat:3 }}%)
+            </h4>
+          </aside>
         </div>
-        {% endfor %}
       </div>
+      {% endfor %}
     </div>
-  </section>
-  {% include 'article_detail/read_more.html' %}
-</aside>
+  </div>
+</section>
+
