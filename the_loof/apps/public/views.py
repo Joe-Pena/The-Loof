@@ -22,22 +22,7 @@ def article_detail(request, slug):
     template_name = "article_detail/article.html"
     article = get_object_or_404(Article, slug=slug)
     comments = article.comments.filter(active=True)
-    new_comment = None
-
-    # If posting a comment
-    if request.is_ajax and request.method == "POST":
-        comment_form = CommentForm(request.POST)
-        if comment_form.is_valid():
-            new_comment = comment_form.save(commit=False)
-            new_comment.article = article
-            new_comment.save()
-
-            # Return a rendered comment template
-            # instead of a JSON response. This is
-            # to be able to use Django template filters
-            return render(request, "comments/comment.html", {"comment": new_comment})
-    else:
-        comment_form = CommentForm()
+    comment_form = CommentForm()
 
     # Get random stocks info
     # NOTE: Trying to avoid using Stock.objects.filter('?')
@@ -64,9 +49,25 @@ def article_detail(request, slug):
         {
             "article": article,
             "comments": comments,
-            "new_comment": new_comment,
             "comment_form": comment_form,
             "stock_list": stock_list,
             "article_list": article_list,
         },
     )
+
+
+def post_comment(request, slug):
+    new_comment = None
+    curr_article = get_object_or_404(Article, slug=slug)
+
+    if request.is_ajax and request.method == "POST":
+        comment_form = CommentForm(request.POST)
+        if comment_form.is_valid():
+            new_comment = comment_form.save(commit=False)
+            new_comment.article = curr_article
+            new_comment.save()
+
+            # Return a rendered comment template
+            # instead of a JSON response. This is
+            # to be able to use Django template filters
+            return render(request, "comments/comment.html", {"comment": new_comment})

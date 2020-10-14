@@ -19,7 +19,7 @@
 
     $.ajax({
       type: 'POST',
-      url: '{% url "public:article_detail" article.slug %}',
+      url: '{% url "public:post_comment" article.slug %}',
       data: {
         body: $('#id_body').val(),
         csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
