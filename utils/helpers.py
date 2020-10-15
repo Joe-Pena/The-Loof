@@ -1,4 +1,7 @@
-# Future helper functions will go here
-# For example, functions that'll help
-# select random items from db
-# rather than making queries with "?"
+def get_related_stocks(articles):
+    stock_list = []
+
+    for stock in articles:
+        stock_list.append(stock["symbol"])
+
+    return stock_list

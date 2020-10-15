@@ -5,6 +5,7 @@ import random
 
 from the_loof.apps.public.forms import CommentForm
 from .models import Article, Stock
+from utils import helpers
 
 
 class ArticleList(generic.ListView):
@@ -18,6 +19,15 @@ class ArticleList(generic.ListView):
         return context
 
 
+def get_related_stocks(articles):
+    stock_list = []
+
+    for stock in articles:
+        stock_list.append(stock["symbol"])
+
+    return stock_list
+
+
 def article_detail(request, slug):
     template_name = "article_detail/article.html"
     article = get_object_or_404(Article, slug=slug)
@@ -26,8 +36,13 @@ def article_detail(request, slug):
 
     # Get random stocks info
     # NOTE: Trying to avoid using Stock.objects.filter('?')
+    related_stock_symbols = helpers.get_related_stocks(article.instruments)
+    related_stock = Stock.objects.filter(symbol__in=related_stock_symbols)
+
     max_stock_index = Stock.objects.last().id
-    random_stock_ids = random.sample(range(1, max_stock_index + 1), 4)
+    random_stock_ids = random.sample(
+        range(1, max_stock_index + 1), 4 - len(related_stock_symbols)
+    )
     stock_list = Stock.objects.filter(id__in=random_stock_ids)
 
     # Get random articles, excluding current
@@ -50,6 +65,7 @@ def article_detail(request, slug):
             "article": article,
             "comments": comments,
             "comment_form": comment_form,
+            "related_stocks": related_stock,
             "stock_list": stock_list,
             "article_list": article_list,
         },
@@ -78,4 +94,4 @@ def shuffle_stocks(request):
     random_stock_ids = random.sample(range(1, max_stock_index + 1), 4)
     stock_list = Stock.objects.filter(id__in=random_stock_ids)
 
-    return render(request, "stocks/stocks.html", {"stock_list": stock_list})
+    return render(request, "stocks/stock_list.html", {"stock_list": stock_list})
