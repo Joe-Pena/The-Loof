@@ -3,7 +3,9 @@
   <h3>Comments</h3>
 </div>
 <div class="comments" id="comments-section">
-  {% for comment in comments %} {% include 'comments/comment.html' %} {%endfor%}
+  {% for comment in comments %}
+    {% include 'comments/comment.html' %}
+  {%endfor%}
 </div>
 <h3>Leave us a comment!</h3>
 <form method="post" id="comment-form">

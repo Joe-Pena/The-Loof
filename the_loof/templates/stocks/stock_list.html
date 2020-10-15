@@ -1,0 +1,34 @@
+<section id="stocks-section" class="related-tickers">
+  <div class="block-title d-flex justify-content-between">
+    <h2>Stocks</h2>
+    <div id="shuffle-stocks-btn" class="d-flex align-items-center"><icon class="fa fa-sync-alt text-primary"></div>
+  </div>
+  <div class="container">
+    <div class="row">
+      {% include 'stocks/related_stocks.html' %}
+      {% include 'stocks/random_stocks.html' %}
+    </div>
+  </div>
+</section>
+
+{% block javascript %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  $("#shuffle-stocks-btn").click(function (e) {
+    $.ajax({
+      type: 'GET',
+      url: '{% url "public:shuffle_stocks" %}',
+      data: {
+        csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+      },
+      success: function (el) {
+        $('#stocks-section').replaceWith(el)
+      },
+      error: function (xhr, errmsg, err) {
+        console.log(errmsg);
+      },
+    });
+  });
+</script>
+{% endblock javascript %}
+
