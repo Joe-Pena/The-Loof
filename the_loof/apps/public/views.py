@@ -35,28 +35,13 @@ def article_detail(request, slug):
     comment_form = CommentForm()
 
     # Get random stocks info
-    # NOTE: Trying to avoid using Stock.objects.filter('?')
-    related_stock_symbols = helpers.get_related_stocks(article.instruments)
-    related_stock = Stock.objects.filter(symbol__in=related_stock_symbols)
-
-    max_stock_index = Stock.objects.last().id
-    random_stock_ids = random.sample(
-        range(1, max_stock_index + 1), 4 - len(related_stock_symbols)
+    related_stocks = helpers.get_related_stocks(article.instruments)
+    stock_list = helpers.get_random_stocks(
+        len(article.instruments), list(related_stocks.values_list("id", flat=True))
     )
-    stock_list = Stock.objects.filter(id__in=random_stock_ids)
 
     # Get random articles, excluding current
-    curr_article_id = article.id
-    max_article_index = Article.objects.last().id
-    random_article_ids = []
-
-    while len(random_article_ids) != 5:
-        r_id = random.randint(1, max_article_index)
-
-        if r_id != curr_article_id:
-            random_article_ids.append(r_id)
-
-    article_list = Article.objects.filter(id__in=random_article_ids)
+    article_list = helpers.get_random_articles(article.id)
 
     return render(
         request,
@@ -65,7 +50,7 @@ def article_detail(request, slug):
             "article": article,
             "comments": comments,
             "comment_form": comment_form,
-            "related_stocks": related_stock,
+            "related_stocks": related_stocks,
             "stock_list": stock_list,
             "article_list": article_list,
         },
